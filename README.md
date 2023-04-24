@@ -45,6 +45,9 @@ This module depends on the following library:
 
 If you would like to contribute to this project, please create a fork and submit a pull request. Please follow the code style and conventions used in this project.
 
+## License
+
+[MIT](#LICENSE.md)
 
 ## Contact
 
