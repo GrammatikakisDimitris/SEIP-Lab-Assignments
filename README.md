@@ -1,4 +1,4 @@
-# SEIP-2023 Practical Assignments
+# SEIP-2023 Practical Assignments ![Deploy Badge](https://github.com/GrammatikakisDimitris/SEIP-Lab-Assignments/actions/workflows/main.yml/badge.svg)
 
 This project consists of several modules that provide functionality for different tasks related to software engineering. One of these modules is the **gradeshistogram** module, which provides functionality for reading a file containing grades and generating a histogram based on the frequencies of these grades. The other is the **unittesting** module, which provides unit testing for normal, border, zero cases, and exceptions for classes that perform math operations.
 
