@@ -1,9 +1,9 @@
 # SEIP-2023 Practical Assignments
 
-This project consists of several modules that provide functionality for different tasks related to software engineering. One of these modules is the **gradeshistogram** module, which provides functionality for reading a file containing grades and generating a histogram based on the frequencies of these grades.
+This project consists of several modules that provide functionality for different tasks related to software engineering. One of these modules is the **gradeshistogram** module, which provides functionality for reading a file containing grades and generating a histogram based on the frequencies of these grades. The other is the **unittesting** module, which provides unit testing for normal, border, zero cases, and exceptions for classes that perform math operations.
 
 ## Prerequisites
-Before running any of the modules, you need to have Maven and Java installed on your system.
+Before running any of the modules, you need to have Maven and Java and installed on your system.
 
 ## Installation
 
@@ -33,6 +33,10 @@ Before running any of the modules, you need to have Maven and Java installed on 
 
 ## Usage
 
+### unittesting
+If the project is built successfully then all unit tests have passed.
+
+### gradehistogram
 After running the jar file, the histogram will be displayed in a separate window. The X-axis represents the grades and the Y-axis represents the frequencies.
 
 ## Dependencies
@@ -40,6 +44,8 @@ After running the jar file, the histogram will be displayed in a separate window
 This module depends on the following library:
 
 - JFreeChart 1.5.3
+
+- JUnit 4.12
 
 ## Contributing
 
