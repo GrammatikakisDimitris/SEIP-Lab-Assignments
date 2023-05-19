@@ -38,5 +38,22 @@ public class MyMathTest {
 		thrown.expectMessage("number should be >= 0 and <= 12");
 		mm.factorial(number);
 	}
+	
+	/**
+     * Test case for the isPrime() method of the MyMath class.
+     * Tests the primality check for a positive integer.
+     * Expects an exception to be thrown when the input is less than 2.
+     */
+	@Test
+	public void testIsPrime() {
+		int number = 5;
+		
+		boolean expected = true;
+		Assert.assertEquals(expected, mm.isPrime(number));
+		
+		number = 0;
+		thrown.expectMessage("number should be >= 2");
+		mm.isPrime(number);
+	}
 }
 

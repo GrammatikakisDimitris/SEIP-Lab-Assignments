@@ -38,8 +38,15 @@ public class FileIO {
 			reader = new BufferedReader(new FileReader(file));
 			String line = null;
 			while ((line = reader.readLine()) != null) {
-				int number = Integer.parseInt(line);
-				numbersList.add(number);
+				try {
+					int number = Integer.parseInt(line);
+					numbersList.add(number);
+				
+				} catch(Exception e) {
+					continue;
+					
+				}
+
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
