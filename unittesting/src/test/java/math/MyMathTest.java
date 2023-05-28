@@ -53,12 +53,20 @@ public class MyMathTest {
      * Expect an exception to be thrown when the input is less than 2.
      */
 	@Test
-	public void testIsPrimeValidInput() {
+	public void testIsPrimeValidInputPrime() {
 		int number = 5;
 		
 		boolean expected = true;
 		Assert.assertEquals(expected, mm.isPrime(number));
 
+	}
+	
+	@Test
+	public void testIsPrimeValidInputNonPrime() {
+		int number = 9;
+		
+		boolean expected = false;
+		Assert.assertEquals(expected, mm.isPrime(number));
 	}
 	
 	@Test
@@ -68,5 +76,6 @@ public class MyMathTest {
 		thrown.expectMessage("number should be >= 2");
 		mm.isPrime(number);
 	}
+	
 }
 

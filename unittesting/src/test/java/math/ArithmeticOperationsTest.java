@@ -34,6 +34,7 @@ public class ArithmeticOperationsTest {
 		double denominator = 0;
 		
 		double result = ao.divide(numerator, denominator);
+		System.out.println("Cannot divide with zero");
 	}
 	
 	
@@ -50,22 +51,70 @@ public class ArithmeticOperationsTest {
 		int x = 2;
 		int y = 5;
 		
-		double expected = 10;
+		int expected = 10;
 		Assert.assertEquals(expected, ao.multiply(x, y), 0);
 	}
 	
 	@Test
-	public void testMultiplyNegativeInput() {		
+	public void testMultiplyZeroInputXY() {		
+		int x = 0;
+		int y = 0;
+		
+		int expected = 0;
+		Assert.assertEquals(expected, ao.multiply(x, y), 0);
+	}
+	
+	@Test
+	public void testMultiplyZeroInputX() {		
+		int x = 0;
+		int y = 5;
+		
+		int expected = 0;
+		Assert.assertEquals(expected, ao.multiply(x, y), 0);
+	}
+	
+	@Test
+	public void testMultiplyZeroInputY() {		
+		int x = 10;
+		int y = 0;
+		
+		int expected = 0;
+		Assert.assertEquals(expected, ao.multiply(x, y), 0);
+	}
+	
+	@Test
+	public void testMultiplyNegativeInputXY() {		
 		int x = -1;
 		int y = -2;
+		
 		thrown.expectMessage("x & y should be >= 0");
 		ao.multiply(x, y);
 	}
 	
 	@Test
-	public void testMultiplyIntegerOutOfBounds() {
-		int x = Integer.MAX_VALUE + 1;
+	public void testMultiplyNegativeInputX() {		
+		int x = -1;
 		int y = 2;
+		
+		thrown.expectMessage("x & y should be >= 0");
+		ao.multiply(x, y);
+	}
+	
+	@Test
+	public void testMultiplyNegativeInputY() {		
+		int x = 1;
+		int y = -2;
+		
+		thrown.expectMessage("x & y should be >= 0");
+		ao.multiply(x, y);
+	}
+	
+	
+	@Test
+	public void testMultiplyIntegerOutOfBounds() {
+		int x = Integer.MAX_VALUE - 1;
+		int y = 2;
+		
 		thrown.expectMessage("The product does not fit in an Integer variable");
 		ao.multiply(x, y);
 	}
