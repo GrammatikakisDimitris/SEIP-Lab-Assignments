@@ -15,20 +15,27 @@ public class ArithmeticOperationsTest {
 	ArithmeticOperations ao = new ArithmeticOperations();
 	
 	/**
-	 * Test case for divide method. Expects an ArithmeticException to be thrown when denominator is 0.
+	 * Test cases for the divide method. Expect an ArithmeticException to be thrown when denominator is 0.
 	 */
 	
-	@Test (expected = ArithmeticException.class)
-	public void test_divide() {
+	@Test
+	public void testDivideValidInput() {
 		double numerator = 10.0;
 		double denominator = 2.0;
 		
 		double expected = 5.0;
 		Assert.assertEquals(expected, ao.divide(numerator, denominator), 0);
 		
-		denominator = 0;
+	}
+	
+	@Test (expected = ArithmeticException.class)
+	public void testDivideByZero() {
+		double numerator = 10.0;
+		double denominator = 0;
+		
 		double result = ao.divide(numerator, denominator);
 	}
+	
 	
 	/**
 	 * Test case for multiply method. Expects IllegalArgumentException to be thrown when x or y is negative,
@@ -39,20 +46,26 @@ public class ArithmeticOperationsTest {
 	public ExpectedException thrown = ExpectedException.none();
 	
 	@Test
-	public void test_multiply() {
+	public void testMultiplyValidInput() {
 		int x = 2;
 		int y = 5;
 		
 		double expected = 10;
 		Assert.assertEquals(expected, ao.multiply(x, y), 0);
-		
-		x = -1;
-		y = -2;
+	}
+	
+	@Test
+	public void testMultiplyNegativeInput() {		
+		int x = -1;
+		int y = -2;
 		thrown.expectMessage("x & y should be >= 0");
 		ao.multiply(x, y);
-		
-		x = Integer.MAX_VALUE + 1;
-		y = 2;
+	}
+	
+	@Test
+	public void testMultiplyIntegerOutOfBounds() {
+		int x = Integer.MAX_VALUE + 1;
+		int y = 2;
 		thrown.expectMessage("The product does not fit in an Integer variable");
 		ao.multiply(x, y);
 	}

@@ -19,39 +19,52 @@ public class MyMathTest {
 	public ExpectedException thrown = ExpectedException.none();
 	
 	/**
-	 * Tests the factorial() method of the MyMath class for normal and exceptional cases.
-	 * Expects an exception to be thrown when the input is a negative integer or an integer greater than 12.
+	 * Test cases for the factorial() method of the MyMath class for normal and exceptional cases.
+	 * Expect an exception to be thrown when the input is a negative integer or an integer greater than 12.
 	 */
 	
 	@Test
-	public void testFactorial() {
+	public void testFactorialValidInput() {
 		int number = 4;
 		
 		int expected = 24;
 		Assert.assertEquals(expected, mm.factorial(number));
+
+	}
+	
+	@Test
+	public void testFactorialLowerThanZero() {
+		int number = -1;
 		
-		number = -1;
 		thrown.expectMessage("number should be >= 0 and <= 12");
 		mm.factorial(number);
-		
-		number = 13;
+
+	}
+	
+	@Test
+	public void testFactorialHigherThanTwelve() {
+		int number = 13;
 		thrown.expectMessage("number should be >= 0 and <= 12");
 		mm.factorial(number);
 	}
-	
 	/**
-     * Test case for the isPrime() method of the MyMath class.
-     * Tests the primality check for a positive integer.
-     * Expects an exception to be thrown when the input is less than 2.
+     * Test cases for the isPrime() method of the MyMath class.
+     * Test the primality check for a positive integer.
+     * Expect an exception to be thrown when the input is less than 2.
      */
 	@Test
-	public void testIsPrime() {
+	public void testIsPrimeValidInput() {
 		int number = 5;
 		
 		boolean expected = true;
 		Assert.assertEquals(expected, mm.isPrime(number));
+
+	}
+	
+	@Test
+	public void testIsPrimeLowerThanTWo() {
+		int number = 0;
 		
-		number = 0;
 		thrown.expectMessage("number should be >= 2");
 		mm.isPrime(number);
 	}
