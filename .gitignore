@@ -6,6 +6,9 @@
 # Maven output files and directories
 target/
 
+# Csv output files
+*.csv
+
 # Gradle output files and directories
 .gradle/
 build/
