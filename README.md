@@ -1,6 +1,6 @@
 # SEIP-2023 Practical Assignments ![Deploy Badge](https://github.com/GrammatikakisDimitris/SEIP-Lab-Assignments/actions/workflows/main.yml/badge.svg)
 
-This project consists of several modules that provide functionality for different tasks related to software engineering. One of these modules is the **gradeshistogram** module, which provides functionality for reading a file containing grades and generating a histogram based on the frequencies of these grades. The other is the **unittesting** module, which provides unit testing for normal, border, zero cases, and exceptions for classes that perform math operations.
+This project consists of several modules that provide functionality for different tasks related to software engineering. The first of these is the **gradeshistogram** module, which provides functionality for reading a file containing grades and generating a histogram based on the frequencies of these grades. The second is the **unittesting** module, which provides unit testing for normal, border, zero cases, and exceptions for classes that perform math operations. The last module is the [***sourcecodeanalyzer***](/sourcecodeanalyzer/README.md), designed to analyze Java source code using various design patterns. It features a command-line interface for running the application and supports multiple output formats.
 
 ## Prerequisites
 Before running any of the modules, you need to have Maven and Java and installed on your system.
@@ -39,9 +39,11 @@ If the project is built successfully then all unit tests have passed.
 ### gradehistogram
 After running the jar file, the histogram will be displayed in a separate window. The X-axis represents the grades and the Y-axis represents the frequencies.
 
+### sourcecodeanalyzer
+See [sourcecodeanalyzer README.md](/sourcecodeanalyzer/README.md) for details.
 ## Dependencies
 
-This module depends on the following library:
+This project depends on the following libraries:
 
 - JFreeChart 1.5.3
 
@@ -53,7 +55,7 @@ If you would like to contribute to this project, please create a fork and submit
 
 ## License
 
-[MIT](#LICENSE.md)
+[MIT](/LICENSE.md)
 
 ## Contact
 
